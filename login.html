@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Sign Up - FoodSaver</title>
+    <link href="img/doante.png" rel="icon">
+
+    <!-- FontAwesome for Icons (reliable CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body background styling */
+        body {
+            background-color: #ffffff;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 300%;
+            
+            
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            width: 100%;
+            background-color: #022F46;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            color: #ff6600;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #fff;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 10px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav-links .user-icon {
+            font-size: 20px;
+        }
+
+        /* Form Section Styling */
+        .form-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-box {
+            background-color: #022F46;
+            height: 65%;
+            width: 100%;
+            padding: 60px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .form-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff6600;
+        }
+
+        .input-box {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 10px;
+            background: none;
+            border: none;
+            border-bottom: 2px solid #fff;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .input-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            pointer-events: none;
+            transition: 0.5s;
+            color: #aaa;
+        }
+
+        .input-box input:focus ~ label,
+        .input-box input:valid ~ label {
+            top: -20px;
+            left: 0;
+            color: #ff6600;
+            font-size: 12px;
+        }
+
+        .input-box .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #aaa;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-btn:hover {
+            background-color: #e65c00;
+        }
+
+        .remember-me {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .remember-me label {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .remember-me input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .forgot-password {
+            text-align: right;
+        }
+
+        .forgot-password a {
+            color: #ff6600;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .signup-link, .login-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .signup-link a, .login-link a {
+            color: #ff6600;
+            text-decoration: none;
+        }
+
+        .signup-link a:hover, .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">Food<span>Saver</span></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="causes.html">Causes</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" class="user-icon"><i class="fas fa-user"></i></a></li> <!-- User Icon -->
+        </ul>
+    </nav>
+
+    <!-- Login Form Section -->
+    <section class="form-section" id="login-section">
+        <div class="form-box">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="input-box">
+                    <input type="text" id="login-username" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="login-password" required>
+                    <label>Password</label>
+                    <i class="fas fa-eye toggle-password" id="toggle-login-password"></i>
+                </div>
+                <div class="remember-me">
+                    <label><input type="checkbox" id="rememberMe"> Remember Me</label>
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Login</button>
+                <div class="signup-link">
+                    <p>Don't have an account? <a href="#" id="show-signup">Sign up here</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Sign Up Form Section -->
+    <section class="form-section hidden" id="signup-section">
+        <div class="form-box">
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <div class="input-box">
+                    <input type="text" id="signup-username" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <input type="email" id="signup-email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="signup-password" required>
+                    <label>Password</label>
+                    <i class="fas fa-eye toggle-password" id="toggle-signup-password"></i>
+                </div>
+                <button type="submit" class="submit-btn">Sign Up</button>
+                <div class="login-link">
+                    <p>Already have an account? <a href="#" id="show-login">Login here</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- JavaScript for form handling -->
+    <script>
+        // Toggle between Login and Sign Up forms
+        document.getElementById("show-signup").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById("login-section").classList.add("hidden");
+            document.getElementById("signup-section").classList.remove("hidden");
+        });
+
+        document.getElementById("show-login").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById("signup-section").classList.add("hidden");
+            document.getElementById("login-section").classList.remove("hidden");
+        });
+
+        // Toggle Password Visibility for Login
+        const loginPasswordToggle = document.getElementById("toggle-login-password");
+        const loginPasswordInput = document.getElementById("login-password");
+
+        loginPasswordToggle.addEventListener("click", function() {
+            const type = loginPasswordInput.getAttribute("type") === "password" ? "text" : "password";
+            loginPasswordInput.setAttribute("type", type);
+            loginPasswordToggle.classList.toggle("fa-eye-slash");
+        });
+
+        // Toggle Password Visibility for Sign Up
+        const signupPasswordToggle = document.getElementById("toggle-signup-password");
+        const signupPasswordInput = document.getElementById("signup-password");
+
+        signupPasswordToggle.addEventListener("click", function() {
+            const type = signupPasswordInput.getAttribute("type") === "password" ? "text" : "password";
+            signupPasswordInput.setAttribute("type", type);
+            signupPasswordToggle.classList.toggle("fa-eye-slash");
+        });
+
+        // Simulate login validation
+        const fixedUsername = "admin";
+        const fixedPassword = "password123";
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let username = document.getElementById("login-username").value;
+            let password = document.getElementById("login-password").value;
+            let rememberMe = document.getElementById("rememberMe").checked;
+
+            if (username === fixedUsername && password === fixedPassword) {
+                alert("Login successful!");
+                window.location.href=("index.html");
+            } else {
+                alert("Invalid username or password.");
+                
+            }
+        });
+    </script>
+
+</body>
+</html>
