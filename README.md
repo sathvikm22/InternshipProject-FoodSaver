@@ -25,9 +25,10 @@ Food Saver is a front-end user interface designed to support food donation initi
 
 ### Running the Project
 
-1. Clone the repository: `git clone https://github.com/sathvikm22/Food-Donation-InternshipProject.git && cd Food-Donation-InternshipProject`
+1. Clone the repository:
+   `git clone https://github.com/sathvikm22/Food-Donation-InternshipProject.git && cd Food-Donation-InternshipProject`
 
-2. Open the `index.html` file directly in a browser  
+3. Open the `index.html` file directly in a browser  
 or  
 Use a local server such as Live Server in VS Code or XAMPP/MAMP for PHP support
 
