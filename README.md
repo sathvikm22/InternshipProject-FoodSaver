@@ -1,20 +1,42 @@
-# Food-Donation-InternshipProject
-# Food Saver
+# Food Saver - Food Donation Platform 
 
-**Food Saver** is a front-end user interface designed to streamline food donation initiatives. It features an intuitive and responsive design built with modern web technologies.
+Food Saver is a front-end user interface designed to support food donation initiatives. It features a clean and responsive design built using modern web technologies.
 
-## 🛠️ Technologies Used
-- **HTML**: For structuring the content.
-- **CSS** & **SCSS**: For styling and layout.
-- **JavaScript**: For dynamic interactions and functionality.
-- **PHP**: For backend placeholders (no functional backend implemented).
+## Features
 
-## 🚀 Features
-- Clean and responsive design.
-- Interactive user interface.
-- Ready-to-integrate backend functionality.
+- Responsive and modern UI
+- Interactive user interface
+- Easy to integrate with backend systems
+- Designed for food donation and management workflows
 
-## ⚙️ Steps to Run the Project
-1. Clone the repository to your local machine:
-   ```bash
-   git clone https://github.com/sathvikm22/Food-Donation-InternshipProject.git
+## Technologies Used
+
+- HTML – Structure of the web pages
+- CSS and SCSS – Styling and layout
+- JavaScript – Interactivity and dynamic behavior
+- PHP – Placeholder for backend integration (non-functional in current version)
+
+## Getting Started
+
+### Prerequisites
+
+- A web browser (such as Chrome or Firefox)
+- Local development server (optional, required only for PHP functionality)
+
+### Running the Project
+
+1. Clone the repository:
+git clone https://github.com/sathvikm22/Food-Donation-InternshipProject.git
+cd Food-Donation-InternshipProject
+
+2. Open the `index.html` file directly in a browser  
+or  
+Use a local server such as Live Server in VS Code or XAMPP/MAMP for PHP support
+
+## Contributing
+
+Contributions are welcome. Please open an issue or submit a pull request for suggestions or bug fixes.
+
+## License
+
+This project is licensed under the MIT License.
