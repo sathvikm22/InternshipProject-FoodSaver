@@ -32,10 +32,3 @@ Food Saver is a front-end user interface designed to support food donation initi
 or  
 Use a local server such as Live Server in VS Code or XAMPP/MAMP for PHP support
 
-## Contributing
-
-Contributions are welcome. Please open an issue or submit a pull request for suggestions or bug fixes.
-
-## License
-
-MIT
